@@ -249,95 +249,343 @@
 // };
 
 //--SOLUTION 11---------------------------------------------------
-function calculateTotalPrice (orderedQuantity, pricePerItem) {
-  // Change code below this line
-  const totalPrice = orderedQuantity * pricePerItem;
+// function calculateTotalPrice (orderedQuantity, pricePerItem) {
+//   // Change code below this line
+//   const totalPrice = orderedQuantity * pricePerItem;
 
-  // Change code above this line
-  return totalPrice;
-};
+//   // Change code above this line
+//   return totalPrice;
+// };
 
-calculateTotalPrice(5, 100);
-calculateTotalPrice(8, 60);
-calculateTotalPrice(3, 400);
-calculateTotalPrice(1, 3500);
-calculateTotalPrice(12, 70);
-
+// calculateTotalPrice(5, 100);
+// calculateTotalPrice(8, 60);
+// calculateTotalPrice(3, 400);
+// calculateTotalPrice(1, 3500);
+// calculateTotalPrice(12, 70);
 
 
 //--TASK 12-------------------------------------------------------
+// Функция makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) составляет и возвращает сообщение о покупке ремонтных дроидов. 
+// Она объявляет три параметра, значения которых будут задаваться во время её вызова.
 
+//     orderedQuantity - количество дроидов в заказе
+//     pricePerDroid - цена одного дроида
+//     deliveryFee - стоимость доставки
+// Дополни код функции так, чтобы она возвращала сообщение о заказе в формате
+// "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.".
+// Не забудь о цене доставки при вычислениях общей стоимости.
+
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   // Change code below this line
+
+
+
+//   // Change code above this line
+//   return message;
+// }
 
 //--SOLUTION 12---------------------------------------------------
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   // Change code below this line
+// const message = `You ordered droids worth ${orderedQuantity * pricePerDroid + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.` ;
 
+
+//   // Change code above this line
+//   return message;
+// }
+
+// makeOrderMessage(2, 100, 50);
+// makeOrderMessage(4, 300, 100);
+// makeOrderMessage(10, 70, 200);
 
 
 //--TASK 13-------------------------------------------------------
+// Функция isAdult объявляет один параметр age(возраст), значение которого будет задаваться во время её вызова.
+// Присвой переменной passed выражение проверки возраста пользователя на совершеннолетие. 
+// Человек считается совершеннолетним в возрасте 18 лет и старше.
 
+// function isAdult(age) {
+//   // Change code below this line
+//   const passed = ;
+
+//   // Change code above this line
+//   return passed;
+// }
 
 //--SOLUTION 13---------------------------------------------------
+// function isAdult(age) {
+//   // Change code below this line
+//   const passed = age >= 18;
 
-
+//   // Change code above this line
+//   return passed;
+// }
 
 
 //--TASK 14-------------------------------------------------------
+// Функция isValidPassword(password) проверяет равенство сохранённого и введённого паролей и возвращает результат проверки - буль true или false. 
+// Переменная SAVED_PASSWORD хранит значение ранее сохраненного пароля.Введённый пароль передаётся в параметр password.
 
+// Присвой переменной isMatch выражение проверки равенства введённого и сохранённого ранее паролей. 
+// Результатом выражения проверки должно быть true, если значения совпадают, и false, если нет.
+
+// function isValidPassword(password) {
+//   const SAVED_PASSWORD = 'jqueryismyjam';
+//   // Change code below this line
+//   const isMatch = ;
+
+//   // Change code above this line
+//   return isMatch;
+// }
 
 //--SOLUTION 14---------------------------------------------------
+function isValidPassword(password) {
+  const SAVED_PASSWORD = 'jqueryismyjam';
+  // Change code below this line
+  const isMatch = password === SAVED_PASSWORD;
 
-
+  // Change code above this line
+  return isMatch;
+}
 
 
 //--TASK 15-------------------------------------------------------
+// Добавь выражение проверки совершеннолетия пользователя, значения параметра age, в условие для инструкции if.
 
+// Если пользователь совершеннолетний, должен выполняться блок if и в переменную message записывается строка "You are an adult".
+// В противном случае должен выполняться блок else и записывается строка "You are a minor".
+
+// function checkAge(age) {
+//   let message;
+
+//   if () { // Change this line
+//     message = 'You are an adult';
+//   } else {
+//     message = 'You are a minor';
+//   }
+
+//   return message;
+// }
 
 //--SOLUTION 15---------------------------------------------------
+function checkAge(age) {
+  let message;
 
+  if (age >= 18) { // Change this line
+    message = 'You are an adult';
+  } else {
+    message = 'You are a minor';
+  }
 
+  return message;
+}
 
 
 //--TASK 16-------------------------------------------------------
+// Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. 
+// Она объявляет два параметра, значения которых будут задаваться во время её вызова:
 
+//     available - общее количество товаров на складе
+//     ordered - единиц товара в заказе
+// Используя ветвления дополни код функции так, что:
+
+// Если в заказе указано число, превышающее количество товаров на складе,
+// в переменную message записывается строка "Not enough goods in stock!".
+// В противном случае записывается строка "Order is processed, our manager will contact you.".
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+
+//   // Change code above this line
+//   return message;
+// }
 
 //--SOLUTION 16---------------------------------------------------
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (ordered > available) {
+//     message = "Not enough goods in stock!"
+//   }
+//   else {
+//     message = "Order is processed, our manager will contact you."
+//   }
+  
+//   // Change code above this line
+//   return message;
+// }
 
-
+// checkStorage(100, 50);
 
 
 //--TASK 17-------------------------------------------------------
+// Замени выражения со стандартными математеческими операторами на комбинированный оператор присвоения 
+// с добавлением, вычитанием, умножением и делением.
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
 
+// // Change code below this line
+// a = a + 2;
+// b = b - 4;
+// c = c * 3;
+// d = d / 10;
 
 //--SOLUTION 17---------------------------------------------------
+// let a = 5;
+// let b = 10;
+// let c = 15;
+// let d = 20;
 
+// // Change code below this line
+// a += 2;
+// b -= 4;
+// c *= 3;
+// d /= 10;
 
 
 //--TASK 18-------------------------------------------------------
+// Станция по продаже ремонтных дроидов готова к запуску, осталось написать программное обеспечение для отдела продаж.
 
+// Функция makeTransaction(pricePerDroid, orderedQuantity, customerCredits) выполняет транзакцию по продаже дроидов и возвращает сообщение о результате операции. Она объявляет три параметра, значения которых будут задаваться во время её вызова:
+
+// pricePerDroid - цена одного дроида
+// orderedQuantity - кол-во заказанных дроидов
+// customerCredits - сумма средств на счету клиента
+// Дополни её следующим функционалом:
+
+// Объяви переменную totalPrice для хранения общей суммы заказа и присвой ей выражение расчёта этой суммы.
+// Добавь проверку сможет ли клиент оплатить заказ:
+// если сумма к оплате превышает количество кредитов на счету клиента, запиши в переменную message строку "Insufficient funds!";
+// в противном случае, вычти сумму покупки со счёта клиента и запиши в переменную message сообщение: "You ordered <число> droids, you have <число> credits left".
+
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+
+//   // Change code above this line
+//   return message;
+// }
 
 //--SOLUTION 18---------------------------------------------------
-
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   let message;
+//   // Change code below this line
+//   let totalPrice = pricePerDroid * orderedQuantity;
+//   if (totalPrice > customerCredits) {
+//     message = "Insufficient funds!"
+//   }
+//   else {
+//     customerCredits -= totalPrice;
+//     message = `You ordered ${orderedQuantity} droids, you have ${customerCredits} credits left`;
+//   }
+//   // Change code above this line
+//   return message;
+// }
 
 
 //--TASK 19-------------------------------------------------------
+// Функция checkPassword(password) получает пароль пользователя в параметр password, проверяет его на совпадение с паролем администратора в переменной ADMIN_PASSWORD и возвращает сообщение о результате сравнения, хранящееся в переменной message.
 
+// Если значение параметра password равно null, значит пользователь отменил операцию и в message записывается строка "Canceled by user!".
+// Если значение параметра password совпадает со значением ADMIN_PASSWORD, в переменную message присваивается строка "Welcome!".
+// Если ни одно из предыдущих условий не выполнилось, в переменную message записывается строка "Access denied, wrong password!".
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = 'jqueryismyjam';
+//   let message;
+
+//   if () { // Change this line
+//     message =  'Canceled by user!';
+//   } else if () { // Change this line
+//     message = 'Welcome!';
+//   } else {
+//     message = 'Access denied, wrong password!';
+//   }
+
+//   return message;
+// }
 
 //--SOLUTION 19---------------------------------------------------
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = 'jqueryismyjam';
+//   let message;
 
+//   if (password === null) { // Change this line
+//     message =  'Canceled by user!';
+//   } else if (password === ADMIN_PASSWORD) { // Change this line
+//     message = 'Welcome!';
+//   } else {
+//     message = 'Access denied, wrong password!';
+//   }
+
+//   return message;
+// }
 
 
 //--TASK 20-------------------------------------------------------
+// Функция checkStorage(available, ordered) проверяет возможность оформления заказа и возвращает сообщение о результате. 
+// Она объявляет два параметра, значения которых будут задаваться во время её вызова.
 
+//     available - доступное количество товаров на складе
+//     ordered - единиц товара в заказе
+// Используя ветвления дополни код функции так, что:
+
+// Если в заказе еще нет товаров, то есть значение параметра ordered равно 0,
+// в переменную message присваивается строка "There are no products in the order!".
+// Eсли товаров в заказе больше чем доступно товаров на складе, то в переменную message 
+// присваивается строка "Your order is too large, there are not enough items in stock!".
+// В противном случае в переменную message присваевается строка "The order is accepted, our manager will contact you".
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+
+//   // Change code above this line
+//   return message;
+// }
 
 //--SOLUTION 20---------------------------------------------------
-
+// function checkStorage(available, ordered) {
+//   let message; 
+//   // Change code below this line
+//   if (ordered === 0) { 
+//     message =  'There are no products in the order!';
+//   } else if (ordered > available) {
+//     message = 'Your order is too large, there are not enough items in stock!';
+//   } else {
+//     message = 'The order is accepted, our manager will contact you';
+//   }
+//   // Change code above this line
+//   return message;
+// }
 
 
 //--TASK 21-------------------------------------------------------
+// Функция isNumberInRange(start, end, number) проверяет, входит ли число в промежуток. 
+// Она объявляет три параметра, значения которых будут задаваться во время её вызова:
 
+//     number - число, вхождение которого проверяется
+//     start - начало числового промежутка
+//     end - конец числового промежутка
+// Присвой переменной isInRange выражение проверки вхождения number в числовой промеждуток от start до end. 
+// То есть число должно быть больше либо равно start и меньше либо равно end.
+// Результатом выражения проверки будет буль true или false.
+
+// function isNumberInRange(start, end, number) {
+//   const isInRange = ; // Change this line
+
+//   return isInRange;
+// }
 
 //--SOLUTION 21---------------------------------------------------
+// function isNumberInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end; // Change this line
 
-
+//   return isInRange;
+// }
 
 
 //--TASK 22-------------------------------------------------------
