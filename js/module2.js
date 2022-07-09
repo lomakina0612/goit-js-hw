@@ -250,78 +250,245 @@ function checkAge(age) {
 
 
 //--TASK 12-------------------------------------------------------
+// Дополни код функции makeStringFromArray(array, delimeter) так, чтобы она возвращала 
+// в переменной string результат соединения элементов массива array c разделителем delimeter - строку.
 
+// function makeStringFromArray(array, delimeter) {
+//   let string;
+//   // Change code below this line
+
+
+//   // Change code above this line
+//   return string;
+// }
 
 //--SOLUTION 12---------------------------------------------------
+// function makeStringFromArray(array, delimeter) {
+//   let string;
+//   // Change code below this line
+//   string = array.join(delimeter);
 
+
+//   // Change code above this line
+//   return string;
+// }
 
 
 //--TASK 13-------------------------------------------------------
+// Термин slug - это человеко-понятный уникальный идентификатор, который используется в веб-разработке для создания читабельных URL-адесов.
 
+// Например, вместо того чтобы пользователь увидел в адресной строке mysite.com / posts / 1q8fh74tx, можно сделать slug из названия статьи. 
+// В результате адрес получится более приятным для восприятия: mysite.com/posts/arrays-for-begginers.
+
+// Внимание
+// Slug это всегда строка в нижнем регистре, слова которой разделены тире.
+
+// Напиши функцию slugify(title) которая принимает заголовок статьи, параметр title, и возвращает slug, созданный из этой строки.
+
+//     Значением параметра title будут строки, слова которых разделены только пробелами
+//     Все символы slug должны быть в нижнем регистре
+//     Все слова slug должна быть разделены тире
+
+//     function slugify(title) {
+//   // Change code below this line
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 13---------------------------------------------------
+function slugify(title) {
+  // Change code below this line
+return title.toLowerCase().split(" ").join("-")
 
-
+  // Change code above this line
+}
 
 
 //--TASK 14-------------------------------------------------------
+// Дополни код так, чтобы переменные содержали частичные копии исходного массива fruits.
 
+//     firstTwoEls - массив из первых двух элементов
+//     nonExtremeEls - массив из всех элементов кроме первого и последнего
+//     lastThreeEls - массив из трёх последних элементов
+
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// // Change code below this line
+// const firstTwoEls = ;
+// const nonExtremeEls = ;
+// const lastThreeEls = ;
 
 //--SOLUTION 14---------------------------------------------------
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
 
-
+// // Change code below this line
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, fruits.length-1);
+// const lastThreeEls = fruits.slice(-3);
 
 
 //--TASK 15-------------------------------------------------------
+// Дополни код так, чтобы в переменной allClients получился массив всех элементов массивов oldClients и newClients.
 
+// const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// const newClients = ['Peach', 'Houston'];
+
+// const allClients = ; // Change this line
 
 //--SOLUTION 15---------------------------------------------------
+// const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// const newClients = ['Peach', 'Houston'];
 
-
+// const allClients = oldClients.concat(newClients); // Change this line
 
 
 //--TASK 16-------------------------------------------------------
+// Напиши функцию makeArray(firstArray, secondArray, maxLength) для создания нового массива 
+// со всеми элементами двух исходных firstArray и secondArray.
+// Параметр maxLength содержит максимально допустимую длину нового массива.
 
+// Если количество элементов нового массива больше maxLength, функция должна вернуть 
+// копию массива длиной maxLength элементов.
+// В противном случае функция должна вернуть новый массив целиком.
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//     // Change code below this line
+
+//     // Change code above this line
+//   }
 
 //--SOLUTION 16---------------------------------------------------
-
-
+// function makeArray(firstArray, secondArray, maxLength) {
+//     // Change code below this line
+//   let newArray;
+//   newArray = firstArray.concat(secondArray);
+//   if (newArray.length > maxLength) {
+//     return newArray.slice(0, maxLength)
+//   } else {
+//     return newArray;
+//     }
+//     // Change code above this line
+// }
 
 
 //--TASK 17-------------------------------------------------------
+// Дополни цикл for так, чтобы он логировал все целые числа в диапазоне от start до end включительно.
 
+// const start = 3;
+// const end = 7;
+
+// for (let i = ; i <= ; i += ) { // Change this line
+//   console.log(i);
+// }
 
 //--SOLUTION 17---------------------------------------------------
+// const start = 3;
+// const end = 7;
 
+// for (let i = start; i <= end; i += 1) { // Change this line
+//   console.log(i);
+// }
 
 
 //--TASK 18-------------------------------------------------------
+// Напиши функцию calculateTotal(number), которая принимает целое число(параметр number) 
+// и возвращает сумму всех целых чисел от единицы и до этого числа.
+// Например, если number равно 3, то сумма это 1 + 2 + 3, то есть 6.
 
+// function calculateTotal(number) {
+//  // Change code below this line
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 18---------------------------------------------------
+// function calculateTotal(number) {
+//  // Change code below this line
+//   let total = 0;
+//   for (let i = 1; i <= number; i += 1) {    
+//     total += i; 
+//   }
+//   return total;
 
+//   // Change code above this line
+// }
 
 
 //--TASK 19-------------------------------------------------------
+// Дополни код цикла for так, чтобы он последовательно логировал все элементы массива fruits.
 
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+// for (let i = ;) { // Change this line
+//   const fruit = fruits[]; // Change this line
+//   console.log(fruit);
+// }
 
 //--SOLUTION 19---------------------------------------------------
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
 
+// for (let i = 0; i < fruits.length; i += 1) { // Change this line
+//   const fruit = fruits[i]; // Change this line
+//   console.log(fruit);
+// }
 
 
 //--TASK 20-------------------------------------------------------
+// Напиши функцию calculateTotalPrice(order), которая принимает один параметр order - массив чисел,
+// и рассчитывает общую сумму его элементов.
+// Общая сумма элементов должна сохраняться в переменной total, которая возвращается, как результат работы функции.
 
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+
+//   // Change code above this line
+//   return total;
+// }
 
 //--SOLUTION 20---------------------------------------------------
-
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   // Change code above this line
+//   return total;
+// }
 
 
 //--TASK 21-------------------------------------------------------
+// Напиши функцию findLongestWord(string) которая принимает произвольную строку состоящую 
+// только из слов разделённых пробелом(параметр string) и возвращает самое длинное слово в этой строке.
 
+// function findLongestWord(string) {
+//   // Change code below this line
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 21---------------------------------------------------
-
-
+// function findLongestWord(string) {
+//   // Change code below this line
+  
+//     const arrOfWords = string.split(' ');
+//     console.log(arrOfWords);
+//     let arrOfLength = [];
+//     for (let i = 0; i < arrOfWords.length; i += 1 ) {    
+//         arrOfLength[i] = arrOfWords[i].length;
+//     } 
+//     console.log(arrOfLength);
+//     const longestNum = Math.max.apply(null, arrOfLength);
+//     console.log(longestNum);
+//     const indexOfLongest = arrOfLength.indexOf(longestNum);
+//     console.log(indexOfLongest);
+//     const longestWord = arrOfWords[indexOfLongest];
+//     console.log(longestWord);
+//   return longestWord;
+  
+//   // Change code above this line
+// }
 
 
 //--TASK 22-------------------------------------------------------
