@@ -492,86 +492,300 @@ return title.toLowerCase().split(" ").join("-")
 
 
 //--TASK 22-------------------------------------------------------
+// Дополни код функции createArrayOfNumbers(min, max) так, чтобы она возвращала массив всех целых чисел от значения min до max.
 
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   // Change code below this line
+
+//   // Change code above this line
+//   return numbers;
+// }
 
 //--SOLUTION 22---------------------------------------------------
-
-
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   // Change code below this line
+//   for (let i = min; i <= max; i += 1) {
+//     numbers.push(i)
+//   }
+//   // Change code above this line
+//   return numbers;
+// }
 
 
 //--TASK 23-------------------------------------------------------
+// Напиши функцию filterArray(numbers, value), которая принимает массив чисел(параметр numbers) 
+// и возвращает новый массив, в котором будут только те элементы массива numbers,
+// которые больше чем значение параметра value(число).
 
+// function filterArray(numbers, value) {
+//    // Change code below this line
+
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 23---------------------------------------------------
+// function filterArray(numbers, value) {
+//    // Change code below this line
+//   let newArr = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       newArr.push(numbers[i]);
+//     }
+//   }
+// return newArr;
 
-
+//   // Change code above this line
+// }
 
 
 //--TASK 24-------------------------------------------------------
+// Функция checkFruit(fruit) принимает строку с названием фрукта (параметр fruit), и проверяет есть ли такой фрукт в массиве fruits.
 
+// Дополни код функции так, что если:
+
+//     фрукт есть в массиве, то функция возвращает true;
+//     фрукта нет в массиве, то функция возвращает false.
+
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
+
+//   return; // Change this line
+// }
 
 //--SOLUTION 24---------------------------------------------------
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
 
-
+//   return fruits.includes(fruit); // Change this line
+// }
 
 
 //--TASK 25-------------------------------------------------------
+// Общими элементами массивов называют те элементы, которые присутствуют во всех массивах.
 
+// Например, в двух массивах[1, 3, 5] и[0, 8, 5, 3] общими будут числа 3 и 5, т.к.они присутствуют в обоих исходных массивах. 
+// А числа 0, 1 и 8 присутствуют только в одном из массивов.
+
+// Напиши функцию getCommonElements(array1, array2) которая получает два массива произвольной длины 
+// в параметры array1 и array2, и возвращает новый массив, состоящий из тех элементов,
+// которые присутствуют в обоих исходных массивах.
+
+// function getCommonElements(array1, array2) {
+//   // Change code below this line
+
+
+//  // Change code above this line
+// }
 
 //--SOLUTION 25---------------------------------------------------
-
-
+// function getCommonElements(array1, array2) {
+//  // Change code below this line
+// let commonArr = [];
+// for (let i = 0; i < array1.length; i++) {
+//   if (array2.includes(array1[i])) {
+//       commonArr.push(array1[i])
+//     }  
+// }
+// return commonArr;
+//  // Change code above this line
+// }
 
 
 //--TASK 26-------------------------------------------------------
+// Выполни рефакторинг кода функции calculateTotalPrice(order) заменив цикл for на for...of.
 
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   // Change code above this line
+//   return total;
+// }
 
 //--SOLUTION 26---------------------------------------------------
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
 
+//   for (const price of order) {
+//     total += price;
+//   }
 
+//   // Change code above this line
+//   return total;
+// }
 
 
 //--TASK 27-------------------------------------------------------
+// Выполни рефакторинг функции filterArray(numbers, value) заменив цикл for на for...of.
 
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     const number = numbers[i];
+
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+//   // Change code above this line
+// }
 
 //--SOLUTION 27---------------------------------------------------
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
 
+//   for (let number of numbers) {   
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+//   // Change code above this line
+// }
 
 
 //--TASK 28-------------------------------------------------------
+// Дополни выражения остатка от деления так, чтобы код проходил тесты.
 
+// // Change code below this line
+// const a = 3 % ;
+// const b = 4 % ;
+// const c = 11 % ;
+// const d = 12 % ;
+// const e = 8 % ;
 
 //--SOLUTION 28---------------------------------------------------
-
-
+// // Change code below this line
+// const a = 3 % 3;
+// const b = 4 % 3;
+// const c = 11 % 8;
+// const d = 12 % 7;
+// const e = 8 % 6;
 
 
 //--TASK 29-------------------------------------------------------
+// Напиши функцию getEvenNumbers(start, end) которая возвращает массив всех чётных чисел от start до end. 
+// Чётным считается число которое делится на 2 без остатка(10 % 2 === 0).
 
+// function getEvenNumbers(start, end) {
+//    // Change code below this line
+
+
+//     // Change code above this line
+//   }
 
 //--SOLUTION 29---------------------------------------------------
+// function getEvenNumbers(start, end) {
+//    // Change code below this line
+//   let evenNumbers = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 === 0) {
+//       evenNumbers.push(i)
+//     }
+//   }
+//   return evenNumbers;
 
+//     // Change code above this line
+//   }
 
 
 //--TASK 30-------------------------------------------------------
+// Дополни код так, чтобы в переменную number записывалось первое число от start до end, которое делится на 5 без остатка.
 
+// const start = 6;
+// const end = 27;
+// let number;
+
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//   }
+// }
 
 //--SOLUTION 30---------------------------------------------------
+// const start = 6;
+// const end = 27;
+// let number;
 
-
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
 
 
 //--TASK 31-------------------------------------------------------
+// Выполни рефакторинг функции findNumber(start, end, divisor) так, чтобы она:
 
+//     возвращала первое число от start до end, которое делится на divisor без остатка
+//     не использовала оператор break
+//     не использовала переменную number
+
+// function findNumber(start, end, divisor) {
+//   // Change code below this line
+//   let number;
+
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       number = i;
+//       break;
+//     }
+//   }
+
+//   return number;
+//   // Change code above this line
+// }
 
 //--SOLUTION 31---------------------------------------------------
+// function findNumber(start, end, divisor) {
+//   // Change code below this line
+//   let number;
 
-
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       return i;      
+//     }
+//   }
+//   // Change code above this line
+// }
 
 
 //--TASK 32-------------------------------------------------------
+// Напиши функцию includes(array, value), которая делает тоже самое, что и метод массива
+// массив.includes(значение) - проверяет, есть ли в массиве array значение value,
+// возвращая true если есть и false в противном случае.
 
+// При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
+
+// function includes(array, value) {
+//   // Change code below this line
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 32---------------------------------------------------
-
-
+// function includes(array, value) {
+//   // Change code below this line
+// for (let element of array) {
+//   if (element === value){
+//     return true;
+//   }
+// }
+// return false;
+//   // Change code above this line
+// }
