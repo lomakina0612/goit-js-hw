@@ -1,5 +1,6 @@
+// Модуль 4 - Коллбэки и стрелочные функции - Перебирающие методы массива
 
-//--TASK 1-------------------------------------------------------
+//--TASK 1--------------------------------------------------------------------------------------------------------------
 // Дополни код так, чтобы в переменной result был результат выполнения функции makePizza,
 // а в переменной pointer была ссылка на функцию makePizza.
 
@@ -11,7 +12,7 @@
 // const result = null;
 // const pointer = null;
 
-//--SOLUTION 1----------------------------------------------------------------------------------------------------------
+//--SOLUTION 1---------------------------------------------------
 // function makePizza() {
 //   return "Your pizza is being prepared, please wait.";
 // }
@@ -38,7 +39,7 @@
 //   return;
 // }
 
-//--SOLUTION 2----------------------------------------------------------------------------------------------------------
+//--SOLUTION 2-----------------------------------------------------
 // function deliverPizza(pizzaName) {
 //   return `Delivering ${pizzaName} pizza.`;
 // }
@@ -69,7 +70,7 @@
 
 // makePizza("Ultracheese");
 
-//--SOLUTION 3----------------------------------------------------------------------------------------------------------
+//--SOLUTION 3-----------------------------------------------------
 // function makePizza(pizzaName, callback) {
 //   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
 //   callback(pizzaName);
@@ -119,39 +120,67 @@
 // pizzaPalace.order('Vienna', makePizza, onOrderError);
 
 //--SOLUTION 4---------------------------------------------------
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, onSuccess, onError) {
-    if (this.pizzas.includes(pizzaName)) {
-      return onSuccess(pizzaName);
-    }
-    return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
-  },
-};
-// Change code above this line
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (this.pizzas.includes(pizzaName)) {
+//       return onSuccess(pizzaName);
+//     }
+//     return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+//   },
+// };
+// // Change code above this line
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
 
-// Method calls with callbacks
-console.log(pizzaPalace.pizzas);
-console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
-console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
-console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+// // Method calls with callbacks
+// console.log(pizzaPalace.pizzas);
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
 
 
 //--TASK 5--------------------------------------------------------------------------------------------------------------
+// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел,
+// и рассчитывает общую сумму его элементов, которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   for (let i = 0; i < orderedItems.length; i += 1) {
+//     totalPrice += orderedItems[i];
+//   }
+
+//   // Change code above this line
+//   return totalPrice;
+// }
 
 //--SOLUTION 5---------------------------------------------------
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+
+  orderedItems.forEach(function(item) {
+    totalPrice += item;
+  });
+
+  // Change code above this line
+  return totalPrice;
+}
+
+console.log(calculateTotalPrice([12, 85, 37, 4]));
 
 
 //--TASK 6--------------------------------------------------------------------------------------------------------------
