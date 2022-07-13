@@ -264,24 +264,70 @@
 
 
 //--TASK 8--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice() так,
+// чтобы она была объявлена как стрелочная.
 
+//   // Change code below this line
+
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
 
 //--SOLUTION 8---------------------------------------------------
+// // Change code below this line
 
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
 
 
 //--TASK 9--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice() так,
+// чтобы она использовала неявный возврат.
 
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
+// // Change code above this line
 
 //--SOLUTION 9---------------------------------------------------
-
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;;
+// // Change code above this line
 
 
 //--TASK 10--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её 
+// объявление на стрелочную функцию.Замени коллбек - функцию передаваемую в 
+// метод forEach() на стрелочную функцию.
 
+// // Change code below this line
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// // Change code above this line
 
 //--SOLUTION 10---------------------------------------------------
+// // Change code below this line
+// const calculateTotalPrice = (orderedItems) => {
+//   let totalPrice = 0;
 
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// // Change code above this line
 
 
 //--TASK 11--------------------------------------------------------------------------------------------------------------
