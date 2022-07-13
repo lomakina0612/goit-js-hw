@@ -119,53 +119,148 @@
 // pizzaPalace.order('Vienna', makePizza, onOrderError);
 
 //--SOLUTION 4---------------------------------------------------
-const pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, onSuccess, onError) {
-    if (this.pizzas.includes(pizzaName)) {
-      return onSuccess(pizzaName);
-    }
-    return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
-  },
-};
-// Change code above this line
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (this.pizzas.includes(pizzaName)) {
+//       return onSuccess(pizzaName);
+//     }
+//     return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+//   },
+// };
+// // Change code above this line
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
 
-// Method calls with callbacks
-console.log(pizzaPalace.pizzas);
-console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
-console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
-console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
-console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+// // Method calls with callbacks
+// console.log(pizzaPalace.pizzas);
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
 
 
 //--TASK 5--------------------------------------------------------------------------------------------------------------
+// Функция calculateTotalPrice(orderedItems) принимает один параметр
+// orderedItems - массив чисел, и рассчитывает общую сумму его элементов,
+// которая сохраняется в переменной totalPrice и возвращается 
+// как результат работы функции.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   for (let i = 0; i < orderedItems.length; i += 1) {
+//     totalPrice += orderedItems[i];
+//   }
+
+//   // Change code above this line
+//   return totalPrice;
+// }
 
 //--SOLUTION 5---------------------------------------------------
+// function calculateTotalPrice(orderedItems) {
+// let totalPrice = 0;
+// // Change code below this line
+
+// orderedItems.forEach(function(item) {
+//   totalPrice += item;
+// });
+
+// // Change code above this line
+// return totalPrice;
+// }
 
 
 //--TASK 6--------------------------------------------------------------------------------------------------------------
+// Функция filterArray(numbers, value) принимает массив чисел numbers и 
+// возвращает новый массив, в котором будут только те элементы оригинального
+// массива, которые больше чем значение параметра value.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
 
 //--SOLUTION 6---------------------------------------------------
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
 
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   })
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([2, 4, 1, 5, 3, 7], 3));
 
 
 //--TASK 7--------------------------------------------------------------------------------------------------------------
+// Функция getCommonElements(firstArray, secondArray) принимает два массива 
+// произвольной длины в параметры firstArray и secondArray, и возвращает 
+// новый массив их общих элементов, то есть тех которые есть в обоих массивах.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < firstArray.length; i += 1) {
+//     if (secondArray.includes(firstArray[i])) {
+//       commonElements.push(firstArray[i]);
+//     }
+//   }
+
+//   return commonElements;
+//   // Change code above this line
+// }
 
 //--SOLUTION 7---------------------------------------------------
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
 
+//   firstArray.forEach (function(item){
+//     if (secondArray.includes(item)) {
+//       commonElements.push(item);
+//     }
+// });
+
+//   return commonElements;
+//   // Change code above this line
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
 
 
 //--TASK 8--------------------------------------------------------------------------------------------------------------
