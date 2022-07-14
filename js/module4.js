@@ -23,7 +23,7 @@
 
 
 //--TASK 2--------------------------------------------------------------------------------------------------------------
-// Дополни функцию makeMessage так, чтобы она ожидала вторым параметром(параметр callback) колбэк - функцию и возвращала ее вызов. 
+// Дополни функцию makeMessage так, чтобы она ожидала вторым параметром(параметр callback) колбэк - функцию и возвращала ее вызов.
 // Функция deliverPizza или makePizza будет передаваться как колбэк и ожидать аргументом имя готовой доставляемой пиццы.
 
 // function deliverPizza(pizzaName) {
@@ -152,10 +152,10 @@
 //--TASK 5--------------------------------------------------------------------------------------------------------------
 // Функция calculateTotalPrice(orderedItems) принимает один параметр
 // orderedItems - массив чисел, и рассчитывает общую сумму его элементов,
-// которая сохраняется в переменной totalPrice и возвращается 
+// которая сохраняется в переменной totalPrice и возвращается
 // как результат работы функции.
 
-// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала
 // метод forEach.
 
 // function calculateTotalPrice(orderedItems) {
@@ -185,11 +185,11 @@
 
 
 //--TASK 6--------------------------------------------------------------------------------------------------------------
-// Функция filterArray(numbers, value) принимает массив чисел numbers и 
+// Функция filterArray(numbers, value) принимает массив чисел numbers и
 // возвращает новый массив, в котором будут только те элементы оригинального
 // массива, которые больше чем значение параметра value.
 
-// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала
 // метод forEach.
 
 // function filterArray(numbers, value) {
@@ -225,11 +225,11 @@
 
 
 //--TASK 7--------------------------------------------------------------------------------------------------------------
-// Функция getCommonElements(firstArray, secondArray) принимает два массива 
-// произвольной длины в параметры firstArray и secondArray, и возвращает 
+// Функция getCommonElements(firstArray, secondArray) принимает два массива
+// произвольной длины в параметры firstArray и secondArray, и возвращает
 // новый массив их общих элементов, то есть тех которые есть в обоих массивах.
 
-// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала
 // метод forEach.
 
 // function getCommonElements(firstArray, secondArray) {
@@ -301,8 +301,8 @@
 
 
 //--TASK 10--------------------------------------------------------------------------------------------------------------
-// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её 
-// объявление на стрелочную функцию.Замени коллбек - функцию передаваемую в 
+// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её
+// объявление на стрелочную функцию.Замени коллбек - функцию передаваемую в
 // метод forEach() на стрелочную функцию.
 
 // // Change code below this line
@@ -332,48 +332,223 @@
 
 
 //--TASK 11--------------------------------------------------------------------------------------------------------------
+// Замени объявление функции filterArray() и коллбек для метода forEach() на стрелочные функции.
 
+// // Change code below this line
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
 
 //--SOLUTION 11---------------------------------------------------
+// // Change code below this line
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
 
+//   numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
 
+//   // Change code above this line
+//   return filteredNumbers;
+// }
 
 
 //--TASK 12--------------------------------------------------------------------------------------------------------------
+// Замени объявление функции getCommonElements() и коллбек для метода forEach() на стрелочные функции.
 
+// // Change code below this line
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+
+//   firstArray.forEach(function (element) {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   // Change code above this line
+//   return commonElements;
+// }
 
 //--SOLUTION 12---------------------------------------------------
+// // Change code below this line
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
 
+//   firstArray.forEach(element => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   // Change code above this line
+//   return commonElements;
+// }
 
 
 //--TASK 13--------------------------------------------------------------------------------------------------------------
+// Функция changeEven(numbers, value) принимает массив чисел numbers 
+// и обновляет каждый элемент, значение которого это чётное число,
+// добавляя к нему значение параметра value.
 
+// Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив 
+// чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+//   // Change code above this line
+// }
 
 //--SOLUTION 13---------------------------------------------------
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   const newNumbers = numbers.map(
+//     (number) => {
+//       if (number % 2 === 0) {
+//         return number + value;
+//       }
+//       return number;
+//     }    
+//   );   
+//   return newNumbers;
+//   // Change code above this line
+// }
 
-
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
 
 
 //--TASK 14--------------------------------------------------------------------------------------------------------------
+// Дополни код так, чтобы в переменной planetsLengths получился массив длин 
+// названий планет. Обязательно используй метод map().
 
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// // Change code below this line
+// const planetsLengths = planets;
 
 //--SOLUTION 14---------------------------------------------------
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// // Change code below this line
+// const planetsLengths = planets.map(
+//   planet => planet.length
+// );
 
+// console.log(planetsLengths);
 
 
 //--TASK 15--------------------------------------------------------------------------------------------------------------
+// Используя метод map() сделай так, чтобы в переменной titles получился массив 
+// названий книг(свойство title) из всех объектов массива books.
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// // Change code below this line
+
+// const titles = books;
 
 //--SOLUTION 15---------------------------------------------------
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// // Change code below this line
 
-
+// const titles = books.map(book => book.title);
 
 
 //--TASK 16--------------------------------------------------------------------------------------------------------------
+// Используя метод flatMap() сделай так, чтобы в переменной genres получился 
+// массив всех жанров книг(свойство genres) из массива книг books.
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// // Change code below this line
+
+// const genres = books;
 
 //--SOLUTION 16---------------------------------------------------
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// // Change code below this line
 
+// const genres = books.flatMap(book => book.genres);
 
 
 //--TASK 17--------------------------------------------------------------------------------------------------------------
