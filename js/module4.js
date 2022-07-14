@@ -150,10 +150,13 @@
 
 
 //--TASK 5--------------------------------------------------------------------------------------------------------------
-// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел,
-// и рассчитывает общую сумму его элементов, которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
+// Функция calculateTotalPrice(orderedItems) принимает один параметр
+// orderedItems - массив чисел, и рассчитывает общую сумму его элементов,
+// которая сохраняется в переменной totalPrice и возвращается 
+// как результат работы функции.
 
-// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
 
 // function calculateTotalPrice(orderedItems) {
 //   let totalPrice = 0;
@@ -168,54 +171,164 @@
 // }
 
 //--SOLUTION 5---------------------------------------------------
-function calculateTotalPrice(orderedItems) {
-  let totalPrice = 0;
-  // Change code below this line
+// function calculateTotalPrice(orderedItems) {
+// let totalPrice = 0;
+// // Change code below this line
 
-  orderedItems.forEach(function(item) {
-    totalPrice += item;
-  });
+// orderedItems.forEach(function(item) {
+//   totalPrice += item;
+// });
 
-  // Change code above this line
-  return totalPrice;
-}
-
-console.log(calculateTotalPrice([12, 85, 37, 4]));
+// // Change code above this line
+// return totalPrice;
+// }
 
 
 //--TASK 6--------------------------------------------------------------------------------------------------------------
+// Функция filterArray(numbers, value) принимает массив чисел numbers и 
+// возвращает новый массив, в котором будут только те элементы оригинального
+// массива, которые больше чем значение параметра value.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
 
 //--SOLUTION 6---------------------------------------------------
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
 
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   })
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+
+// console.log(filterArray([2, 4, 1, 5, 3, 7], 3));
 
 
 //--TASK 7--------------------------------------------------------------------------------------------------------------
+// Функция getCommonElements(firstArray, secondArray) принимает два массива 
+// произвольной длины в параметры firstArray и secondArray, и возвращает 
+// новый массив их общих элементов, то есть тех которые есть в обоих массивах.
 
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала 
+// метод forEach.
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   for (let i = 0; i < firstArray.length; i += 1) {
+//     if (secondArray.includes(firstArray[i])) {
+//       commonElements.push(firstArray[i]);
+//     }
+//   }
+
+//   return commonElements;
+//   // Change code above this line
+// }
 
 //--SOLUTION 7---------------------------------------------------
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
 
+//   firstArray.forEach (function(item){
+//     if (secondArray.includes(item)) {
+//       commonElements.push(item);
+//     }
+// });
+
+//   return commonElements;
+//   // Change code above this line
+// }
+
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
 
 
 //--TASK 8--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice() так,
+// чтобы она была объявлена как стрелочная.
 
+//   // Change code below this line
+
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
 
 //--SOLUTION 8---------------------------------------------------
+// // Change code below this line
 
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
 
 
 //--TASK 9--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice() так,
+// чтобы она использовала неявный возврат.
 
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
+// // Change code above this line
 
 //--SOLUTION 9---------------------------------------------------
-
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;;
+// // Change code above this line
 
 
 //--TASK 10--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её 
+// объявление на стрелочную функцию.Замени коллбек - функцию передаваемую в 
+// метод forEach() на стрелочную функцию.
 
+// // Change code below this line
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// // Change code above this line
 
 //--SOLUTION 10---------------------------------------------------
+// // Change code below this line
+// const calculateTotalPrice = (orderedItems) => {
+//   let totalPrice = 0;
 
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// // Change code above this line
 
 
 //--TASK 11--------------------------------------------------------------------------------------------------------------
