@@ -1637,13 +1637,13 @@ const users29 = [
 //--TASK 41--------------------------------------------------------------------------------------------------------------
 // Дополни код так, чтобы:
 
-// В переменной sortedByAuthorName получился массив книг отсортированный 
+// В переменной sortedByAuthorName получился массив книг отсортированный
 //   по имени автора в алфавитном порядке.
 // В переменной sortedByReversedAuthorName получился массив книг отсортированный
 //   по имени автора в обратном алфавитном порядке.
-// В переменной sortedByAscendingRating получился массив книг отсортированный 
+// В переменной sortedByAscendingRating получился массив книг отсортированный
 //   по возрастанию рейтинга.
-// В переменной sortedByDescentingRating получился массив книг отсортированный 
+// В переменной sortedByDescentingRating получился массив книг отсортированный
 //   по убыванию рейтинга.
 
 // const books = [
@@ -1710,7 +1710,7 @@ const users29 = [
 
 
 //--TASK 42--------------------------------------------------------------------------------------------------------------
-// Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала 
+// Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала
 // массив пользователей отсортированный по возрастанию их баланса(свойство balance).
 
 // // Change code below this line
@@ -1720,49 +1720,165 @@ const users29 = [
 // Change code above this line
 
 //--SOLUTION 42---------------------------------------------------
-// Change code below this line
-const sortByAscendingBalance = users => {
-   return [...users].sort((a, b) => a.balance - b.balance);
-};
-// Change code above this line
+// // Change code below this line
+// const sortByAscendingBalance = users => {
+//    return [...users].sort((a, b) => a.balance - b.balance);
+// };
+// // Change code above this line
 
 
 //--TASK 43--------------------------------------------------------------------------------------------------------------
+// Дополни функцию sortByDescendingFriendCount(users) так, чтобы она возвращала
+// массив пользователей отсортированный по убыванию количества их друзей(свойство friends).
 
+// // Change code below this line
+// const sortByDescendingFriendCount = users => {
+   
+// };
+// // Change code above this line
 
 //--SOLUTION 43---------------------------------------------------
-
+// // Change code below this line
+// const sortByDescendingFriendCount = users => {
+//    return [...users].sort((a, b) => b.friends.length - a.friends.length)
+// };
+// // Change code above this line
 
 
 //--TASK 44--------------------------------------------------------------------------------------------------------------
+// Дополни функцию sortByName(users) так, чтобы она возвращала массив
+// пользователей отсортированный по их имени(свойство name) в алфавитном порядке.
 
+// // Change code below this line
+// const sortByName = users => {
+   
+// };
+// // Change code above this line
 
 //--SOLUTION 44---------------------------------------------------
-
+// // Change code below this line
+// const sortByName = users => {
+//   return [...users].sort((a, b) => a.name.localeCompare(b.name));
+// };
+// // Change code above this line
 
 
 //--TASK 45--------------------------------------------------------------------------------------------------------------
+// Дополни код так, чтобы в переменной names получился массив имён авторов в
+// алфавитном порядке, рейтинг книг которых больше значения переменной MIN_BOOK_RATING.
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
+
+// const names = books;
 
 //--SOLUTION 45---------------------------------------------------
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
 
+// const names = books.filter(book => book.rating >= MIN_BOOK_RATING).map(book => book.author).sort()
 
 
 //--TASK 46--------------------------------------------------------------------------------------------------------------
+// Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала
+// массив имён пользователей отсортированный по возрастанию количества их
+// друзей(свойство friends).
 
+// // Change code below this line
+// const getNamesSortedByFriendCount = users => {
+   
+// };
+// // Change code above this line
 
 //--SOLUTION 46---------------------------------------------------
-
+// // Change code below this line
+// const getNamesSortedByFriendCount = users => {
+//   return [...users].sort((a, b) => a.friends.length - b.friends.length).map(user => user.name);
+// };
+// // Change code above this line
 
 
 //--TASK 47--------------------------------------------------------------------------------------------------------------
+// Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив
+// уникальных имён друзей(свойство friends) отсортированный по алфавиту.
 
+// // Change code below this line
+// const getSortedFriends = users => {
+   
+// };
+// // Change code above this line
 
 //--SOLUTION 47---------------------------------------------------
-
+// // Change code below this line
+// const getSortedFriends = users => {
+//   const allFriends = users.flatMap(user => user.friends);
+//   const uniqueFriends = allFriends.filter((friend, index) => allFriends.indexOf(friend) === index);
+//   return uniqueFriends.sort();
+// };
+// // Change code above this line
 
 
 //--TASK 48--------------------------------------------------------------------------------------------------------------
+// Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она
+// возвращала общий баланс пользователей(свойство balance), пол которых
+// (свойство gender) совпадает со значением параметра gender.
 
+// // Change code below this line
+// const getTotalBalanceByGender = (users, gender) => {
+   
+// };
+// // Change code above this line
 
 //--SOLUTION 48---------------------------------------------------
+// // Change code below this line
+// const getTotalBalanceByGender = (users, gender) => {
+//   const filteredByGender = users.filter(user => user.gender === gender);
+//   return filteredByGender.reduce((total, user) => total + user.balance, 0);
+// };
+// // Change code above this line
