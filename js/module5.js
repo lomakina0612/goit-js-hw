@@ -177,43 +177,185 @@
 
 
 //--TASK 4--------------------------------------------------------------------------------------------------------------
+// Измени код так, чтобы объект parent стал прототипом для объекта в 
+// переменной сhild.
 
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = {};
+
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
 
 //--SOLUTION 4---------------------------------------------------
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
 
 
 //--TASK 5--------------------------------------------------------------------------------------------------------------
+// Измени код, построив цепочку прототипов так, чтобы объект ancestor был 
+// прототипом для parent, а тот в свою очередь был прототипом для child.
 
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = {};
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = {};
+// child.name = "Jason";
+// child.age = 27;
+
+// // Change code above this line
 
 //--SOLUTION 5---------------------------------------------------
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
+
+// // Change code above this line
 
 
 //--TASK 6--------------------------------------------------------------------------------------------------------------
-
+// Используя ключевое слово class объяви класс Car с пустым телом.
 
 //--SOLUTION 6---------------------------------------------------
-
+// class Car {
+    
+// }
 
 
 //--TASK 7--------------------------------------------------------------------------------------------------------------
+// Добавь классу Car метод constructor который принимает три параметра:
 
+//   brand - марка автомобиля.
+//   model - модель автомобиля.
+//   price - цена автомобиля.
+// Класс Car должен создавать объект с одноимёнными свойствами brand, model 
+// и price, значениями которых должны быть переданные аргументы во время её 
+// вызова с оператором new.
+
+// class Car {
+//   // Change code below this line
+
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 7---------------------------------------------------
-
+// class Car {
+//   // Change code below this line
+//   constructor (brand, model, price) {
+//     this.brand = brand,
+//     this.model = model,
+//     this.price = price
+//   }
+//   // Change code above this line
+// }
 
 
 //--TASK 8--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг класса Car так, чтобы он принимал один параметр - объект 
+// со свойсвами brand, model и price.Деструктуризируй объект в сигнатуре
+// (подписи) конструктора.
 
+// class Car {
+//   // Change code below this line
+//   constructor(brand, model, price) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
 
 //--SOLUTION 8---------------------------------------------------
-
+// class Car {
+//   // Change code below this line
+//   constructor({brand, model, price}) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
 
 
 //--TASK 9--------------------------------------------------------------------------------------------------------------
+// Добавь классу Car два метода.
 
+//   getPrice() - возвращает значение свойства price из объекта который его 
+// будет вызывать.
+//   changePrice(newPrice) - обновляет значение свойства price у объекта 
+// который его будет вызывать на newPrice.
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+
+
+//   // Change code above this line
+// }
 
 //--SOLUTION 9---------------------------------------------------
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   getPrice() {
+//     return this.price;
+//   }
 
+//   changePrice(newPrice) {
+//     return this.price = newPrice;
+//   }
+//   // Change code above this line
+// }
 
 
 //--TASK 10--------------------------------------------------------------------------------------------------------------
