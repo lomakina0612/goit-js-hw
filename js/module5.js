@@ -866,22 +866,244 @@
 
 
 //--TASK 18--------------------------------------------------------------------------------------------------------------
+// В приложении нужен администратор с возможностью добавлять почты пользователей 
+// в чёрный список.
 
+// Объяви класс Admin, который наследует от класса User
+// Добавь классу Admin публичное статическое свойство AccessLevel(уровень доступа),
+// значение которого это объект { BASIC: "basic", SUPERUSER: "superuser" }
+
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// // Change code below this line
 
 //--SOLUTION 18---------------------------------------------------
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
 
+//   get email() {
+//     return this.email;
+//   }
 
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// // Change code below this line
+
+// class Admin extends User {
+//   static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
+// }
 
 //--TASK 19--------------------------------------------------------------------------------------------------------------
+// Добавь классу Admin метод constructor, который принимает один параметр - объект 
+// настроек с двумя свойствами email и accessLevel.
+// Добавь классу Admin публичное свойство accessLevel, значение которого будет 
+// передаваться при вызове конструктора.
 
+// Чтобы показать как будет использоваться класс Admin мы добавили инициализацию 
+// экземпляра под объявлением класса.
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
 //--SOLUTION 19---------------------------------------------------
+// class User {
+//   email;
 
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super (email);
+//     this.accessLevel = accessLevel;
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
 
 //--TASK 20--------------------------------------------------------------------------------------------------------------
+// Добавь классу Admin следующие свойства и методы.
 
+// Публичное свойство blacklistedEmails для хранения чёрного списка почтовых адресов
+// пользователей. Значение по умолчанию это пустой массив.
+// Публичный метод blacklist(email) для добавления почты в чёрный список. 
+// Метод должен добавлять значение параметра email в массив хранящийся в свойстве
+// blacklistedEmails.
+// Публичный метод isBlacklisted(email) для проверки почты в чёрном списке. 
+// Метод должен проверять наличие значения параметра email в массиве хранящемся 
+// в свойстве blacklistedEmails и возвращать true или false.
+// После объявления класса мы добавили инициализацию экземпляра и вызовы методов 
+// в той последовательности, в которой твой код будут проверять тесты.
+// Пожалуйста ничего там не меняй.
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
 //--SOLUTION 20---------------------------------------------------
+// class User {
+//   email;
 
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+//   blacklistedEmails = [];
+
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+//   }
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
