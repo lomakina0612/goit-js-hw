@@ -662,25 +662,207 @@
 
 
 //--TASK 15--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг класса Car.
+// Сделай свойства model и price приватными, также как #brand.
+// Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры 
+// и сеттеры brand, model и price для взаимодействия с приватными свойствами.
 
+// class Car {
+//   // Change code below this line
+//   #brand;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getBrand() {
+//     return this.#brand;
+//   }
+
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   getModel() {
+//     return this.model;
+//   }
+
+//   updateModel(newModel) {
+//     this.model = newModel;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   setPrice(newPrice) {
+//     this.price = newPrice;
+//   }
+//   // Change code above this line
+// }
 
 //--SOLUTION 15---------------------------------------------------
+// class Car {
+//   // Change code below this line
+//   #brand;
+//   #model;
+//   #price;
 
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
+//   }
 
+//   get brand() {
+//     return this.#brand;
+//   }
+
+//   set brand (newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   get model() {
+//     return this.#model;
+//   }
+
+//   set model(newModel) {
+//     this.#model = newModel;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
+//   // Change code above this line
+// }
 
 
 //--TASK 16--------------------------------------------------------------------------------------------------------------
+// Выполни рефакторинг класса Car. 
+// Добавь публичное статическое свойство MAX_PRICE со значением 50000 - максимально 
+// допустимая цена автомобиля.
 
+// Добавь сеттеру price проверку передаваемого значения параметра newPrice.
+// Если оно больше чем MAX_PRICE, сеттер ничего не делает, а если меньше или равно,
+// то перезаписывает цену автомобиля.
+
+// class Car {
+//   // Change code below this line
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
 
 //--SOLUTION 16---------------------------------------------------
+// class Car {
+//   // Change code below this line
+//   static MAX_PRICE = 50000;
 
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice > Car.MAX_PRICE) {
+//       return;
+//     }
+//     this.#price = newPrice;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
 
 
 //--TASK 17--------------------------------------------------------------------------------------------------------------
+// Добавь классу Car публичный статический метод checkPrice(price), принимающий 
+// цену автомобиля.Метод должен сравнить значения параметра price и приватного 
+// статического свойства MAX_PRICE.
 
+// Если цена автомобиля превышает максимальную, метод должен вернуть строку
+// "Error! Price exceeds the maximum".
+// В противном случае метод должен вернуть строку
+// "Success! Price is within acceptable limits".
+// Под объявлением класса мы добавили инициализацию экземпляра и вызовы методов,
+// чтобы показать как будет использоваться метод checkPrice(price).
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 //--SOLUTION 17---------------------------------------------------
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+//   static checkPrice(price) {
+//     if (price > Car.#MAX_PRICE) {
+//       return "Error! Price exceeds the maximum";
+//     }
 
+//     return "Success! Price is within acceptable limits";
+//   }
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 
 //--TASK 18--------------------------------------------------------------------------------------------------------------
